@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Zilin, Tech" />
+  <meta name="keywords" content="Server,Linux," />
 
 
 
@@ -111,14 +111,17 @@
 
 
 
-<meta name="keywords" content="Zilin, Tech">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zilin Xiang | Blog">
-<meta property="og:url" content="http://localhost:4000/categories/">
+<meta name="description" content="前段时间实验室添置了两台服务器，但是我们从来没接触过，所以完全是硬着头皮在搞，算是踩坑实践。">
+<meta name="keywords" content="Server, Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器配置">
+<meta property="og:url" content="http://localhost:4000/tutorial/2019/11/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">
 <meta property="og:site_name" content="Zilin Xiang | Blog">
+<meta property="og:description" content="前段时间实验室添置了两台服务器，但是我们从来没接触过，所以完全是硬着头皮在搞，算是踩坑实践。">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zilin Xiang | Blog">
+<meta name="twitter:title" content="服务器配置">
+<meta name="twitter:description" content="前段时间实验室添置了两台服务器，但是我们从来没接触过，所以完全是硬着头皮在搞，算是踩坑实践。">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -151,7 +154,7 @@
 
 
 
-  <title>              Categories | Zilin Xiang | Blog      </title>
+  <title>服务器配置 | Zilin Xiang | Blog</title>
   
 
 
@@ -308,55 +311,251 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+
 <div id="posts" class="posts-expand">
-<header class="post-header">
+  
+  
 
-	<h1 class="post-title" itemprop="name headline">
-    
-      Categories
-    
-  </h1>
-
-
-
-</header>
+  
 
   
   
-    <div class="category-all-page">
-      <div class="category-all-title">
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/tutorial/2019/11/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zilin Xiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="assets/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zilin Xiang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
           
-            2 categories in total
           
-      </div>
-      <div class="category-all">
+            服务器配置
+          
+        </h1>
         
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-09T04:13:30+08:00">
+                2019-11-09
+              </time>
+            
 
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/tutorial" itemprop="url" rel="index">
+                    <span itemprop="name">tutorial</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-  <ul class="category-list">
-    
-    <li class="category-list-item">
-      
-      
-      
-      <a class="category-list-link" href="/category/#/tutorial">tutorial</a>
-      <span class="category-list-count">1</span>
-    </i>
-    
-    <li class="category-list-item">
-      
-      
-      
-      <a class="category-list-link" href="/category/#/note">note</a>
-      <span class="category-list-count">1</span>
-    </i>
-    
-  </ul>
+  
+  
 
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+  <blockquote>
+  <p>前段时间实验室添置了两台服务器，但是我们从来没接触过，所以完全是硬着头皮在搞，算是踩坑实践。</p>
+</blockquote>
+
+<h2 id="用户及用户组管理">用户及用户组管理</h2>
+<ol>
+  <li>新建用户 （这里有个坑）
+    <ul>
+      <li><code class="highlighter-rouge">adduser</code>: 会以交互的方式进行创建用户，自动创建主目录等，适合新手</li>
+      <li><code class="highlighter-rouge">useradd</code>: 拥有诸多参数选项（若不指定任何参数，所创建的用户没有主目录、shell，因为未指定密码也无法登录系统），适合进阶者使用</li>
+      <li>利用<code class="highlighter-rouge">shell</code>脚本进行批次新建:  <code class="highlighter-rouge">useradd guest001 -m -p 123456 -r -s \bin\bash -g cola</code> （指定密码<code class="highlighter-rouge">123456</code>，用户组<code class="highlighter-rouge">cola</code>，指定<code class="highlighter-rouge">shell</code>）</li>
+    </ul>
+  </li>
+  <li>删除用户： <code class="highlighter-rouge">userdel guest001</code></li>
+  <li>新建用户组：<code class="highlighter-rouge">addgroup cola</code></li>
+  <li>删除用户组：<code class="highlighter-rouge">groupdel</code></li>
+  <li>修改用户、用户组信息：<code class="highlighter-rouge">usermod</code> \ <code class="highlighter-rouge">groupmod</code>（指定具体参数进行修改）</li>
+  <li>显示用户、用户组信息： <code class="highlighter-rouge">cat /etc/passwd</code> \ <code class="highlighter-rouge">cat /etc/group</code></li>
+  <li>添加用户到<code class="highlighter-rouge">sudo</code>组：<code class="highlighter-rouge">usermod -G sudo guest001</code> （指定附加群组）</li>
+</ol>
+
+<h2 id="ssh远程登录">SSH远程登录</h2>
+<ol>
+  <li>在服务器安装ssh: <code class="highlighter-rouge">sudo apt install openssh-server</code></li>
+  <li>SSH配置： 修改配置文件<code class="highlighter-rouge">/etc/ssh/sshd_config</code> （修改端口，登录限制等等）</li>
+  <li>开启SSH服务： <code class="highlighter-rouge">sudo /etc/init.d/ssh start</code></li>
+</ol>
+
+<h2 id="网络配置">网络配置</h2>
+<ol>
+  <li>可配置类型：动态IP， 静态IP
+    <ul>
+      <li>配置文件位于<code class="highlighter-rouge">/etc/network/interfaces</code></li>
+      <li>动态IP（DHCP），当所分配的固定IP与设备MAC地址绑定时也需使用动态IP,
+        <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code> auto eno1 #eno1为网卡
+ iface eno1 inet dhcp
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>静态IP（一般为局域网IP，也可设置公网IP），必须设置网关
+        <div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code> auto eno1
+iface eno1 inet static
+address 192.168.3.90
+gateway 192.168.3.1
+netmask 255.255.255.0
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>配置结束后，需重启网络服务： <code class="highlighter-rouge">sudo /etc/init.d/networking restart</code></li>
+    </ul>
+  </li>
+  <li>当服务器所分配的固定IP与MAC地址绑定时，最好是通过网口直连；若服务器与路由器相连，路由器在中间作为代理，IP提供者便无法检测到对应MAC地址，为此需将服务器MAC地址克隆到路由器，并建立虚拟服务器（使得外网对该IP的访问会映射到服务器）</li>
+</ol>
+
+
+
+      
     </div>
-  
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/Server" rel="tag"># Server</a>
+          
+            
+            <a href="/tag/#/Linux" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/note/2019/11/09/Python%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E9%97%AE%E9%A2%98/" rel="next" title="Python的函数参数传递问题">
+                <i class="fa fa-chevron-left"></i> Python的函数参数传递问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
 </div>
 
 
@@ -365,6 +564,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -382,10 +585,30 @@
     <div class="sidebar-inner">
 
       
+        
+        
+        
+
+
+
+
+
+
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/images/avatar.gif"
@@ -456,6 +679,34 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#用户及用户组管理"> <span class="nav-number">1</span> <span class="nav-text">用户及用户组管理</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#ssh远程登录"> <span class="nav-number">2</span> <span class="nav-text">SSH远程登录</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#网络配置"> <span class="nav-number">3</span> <span class="nav-text">网络配置</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
